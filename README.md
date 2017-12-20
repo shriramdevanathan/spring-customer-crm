@@ -13,6 +13,17 @@ Following are the components of the eco system, and it can be easily extended.
   * It will register itself on startup to Eureka and the configuration is specified in the application.yaml.
   * It also contains unit test cases for GET, POST and PUT using MockMVC.
   
+  ## Assumptions
+  ## Oauth2.0 security
+  * I was not able to include my implementation of Oauth 2.0 security as there were some issues 
+  which I can resolve given another day(or half day). So I completely removed the security module.
+  * The way I implemented it is as follows,
+    * In the customer-api, I added a ResourceServer and Authorization server.
+      * The Resource server config is annotated with @EnableResourceServer, extends WebSecurityConfigurerAdapter and overrides configure method and uses Spring AuthenticationManager
+      * The Authorization server config is annotated with @EnableAuthorizationServer, extends AuthorizationServerConfigurerAdapter  and overrides configure.
+      * **I used the inMemory authentication of Spring. However, it can be extended to get from Database as well.**
+    * In the eureka-service(api gateway), I added Oauth Config annotated with @EnableOAuth2Sso, extends WebSecurityConfigurerAdapter and permit all other urls except login. Also added a WebMvc config to redirect root to index using thymeleaf. The issue I faced is that for some reason I was getting a weird connection refused issue and I am trying to resolve it.
+      
   ## Integration Design
 ![Architecture](Integration_Design.png)
   
