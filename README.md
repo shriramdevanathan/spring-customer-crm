@@ -1,6 +1,6 @@
 
 
-# Customer CRM Api
+# Customer CRM API
 This is a simple light weight Spring Boot application in a Micro services ecosystem powered by Spring Cloud(Eureka and Zuul). Please note that since as per requirements, CRM is not yet ready for exposing REST APIS, I have taken the liberty to implement sample JPA repositories using the in-memory H2 database offered by Spring. 
 I have also provided the interface for future CRM API consumption.
 
