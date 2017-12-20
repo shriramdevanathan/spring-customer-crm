@@ -2,6 +2,7 @@
 This is a simple light weight Spring Boot application in a Micro services ecosystem powered by Spring Cloud(Eureka and Zuul). Please not that since as per requirements, CRM is not yet ready for exposing REST APIS, I have taken the liberty to implement sample JPA repositories using the in-memory H2 database offered by Spring. 
 I have also provided the interface for future CRM API consumption.
 Following are the components of the eco system, and it can be easily extended.
+**Integrated Swagger as well. Refer to install_steps.txt**
 
   ## eureka-sevice
   * This is a lightweight service registry which makes use of Spring Cloud Eureka for registering clients. 
