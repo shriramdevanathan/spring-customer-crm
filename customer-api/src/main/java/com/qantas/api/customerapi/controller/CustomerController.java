@@ -14,7 +14,7 @@ public class CustomerController {
     private CustomerService customerService;
 
 
-    @ApiOperation(value="Get customers by name")
+    @ApiOperation(value="Get all customers")
     @RequestMapping(value = "/customers", method = RequestMethod.GET)
     @ResponseBody
     public List<Customer> getCustomers(){
@@ -37,9 +37,7 @@ public class CustomerController {
     @ApiOperation(value="create customer")
     @RequestMapping(value = "/customers", method = RequestMethod.POST)
     public Customer createCustomer(@RequestBody Customer customer) {
-        Customer customer1 =  customerService.create(customer);
-        System.out.println("Shrirama first name"+customer1.getFirstName());
-        return customer1;
+        return customerService.create(customer);
     }
 
     @ApiOperation(value="delete customer")
