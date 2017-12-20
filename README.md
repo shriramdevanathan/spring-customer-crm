@@ -13,3 +13,6 @@ Following are the components of the eco system, and it can be easily extended.
   * It will register itself on startup to Eureka and the configuration is specified in the application.yaml.
   * It also contains unit test cases for GET, POST and PUT using MockMVC.
   
+  ## Integration Design
+![Architecture](Integration_Design.png)
+  
